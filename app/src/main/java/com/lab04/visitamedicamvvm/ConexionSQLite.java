@@ -13,7 +13,7 @@ public class ConexionSQLite extends  SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table pacientes(pacDni INTEGER NOT NULL ,PacNom TEXT NOT NULL ,PacEma TEXT NOT NULL,CONSTRAINT PK_pacientes PRIMARY KEY(pacDni))");
+        db.execSQL("create table pacientes(PacDni INTEGER NOT NULL ,PacNom TEXT NOT NULL ,PacEma TEXT NOT NULL,CONSTRAINT PK_pacientes PRIMARY KEY(PacDni))");
         db.execSQL("create table visitaMedica(VisMedCod INTEGER  NOT NULL ,PacDni INTEGER,VisMedPes INTEGER,VisMedTem INTEGER, VisMedSat INTEGER, VisMedPre INTEGER," +
                 "CONSTRAINT PK_visitaMedica PRIMARY KEY(VisMedCod) ,CONSTRAINT Relationship1 FOREIGN KEY (PacDni) REFERENCES pacientes (PacDni))");
        db.execSQL("CREATE INDEX IX_Relationship1 ON visitaMedica (PacDni);");

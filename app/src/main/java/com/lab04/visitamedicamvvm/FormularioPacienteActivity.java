@@ -19,6 +19,7 @@ public class FormularioPacienteActivity extends AppCompatActivity {
         ActivityFormularioPacienteBinding binding= DataBindingUtil.setContentView(this, R.layout.activity_formulario_paciente);
         binding.setViewModelFormulario(new FormularioPacienteViewModel(this));
 
+
         binding.executePendingBindings();
     }
 }
