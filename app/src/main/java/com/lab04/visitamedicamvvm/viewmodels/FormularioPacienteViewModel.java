@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import androidx.databinding.BaseObservable;
-import androidx.databinding.library.baseAdapters.BR;
+//import androidx.databinding.library.baseAdapters.BR;
 import androidx.databinding.Bindable;
 import com.lab04.visitamedicamvvm.ConexionSQLite;
 import com.lab04.visitamedicamvvm.FormularioPacienteActivity;
@@ -26,7 +26,6 @@ public class FormularioPacienteViewModel extends BaseObservable {
 
     public void setPacienteNombres(String nombres){
         paciente.setNombre(nombres);
-
     }
 
     public void setPacienteEmail(String email){

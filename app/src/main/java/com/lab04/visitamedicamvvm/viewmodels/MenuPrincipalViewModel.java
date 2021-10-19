@@ -12,6 +12,7 @@ import androidx.databinding.Bindable;
 import com.lab04.visitamedicamvvm.ConexionSQLite;
 import com.lab04.visitamedicamvvm.FormularioPacienteActivity;
 import com.lab04.visitamedicamvvm.MenuPrincipalActivity;
+import com.lab04.visitamedicamvvm.VisitaPacienteActivity;
 import com.lab04.visitamedicamvvm.model.Paciente;
 
 public class MenuPrincipalViewModel extends BaseObservable {
@@ -31,6 +32,11 @@ public class MenuPrincipalViewModel extends BaseObservable {
         context.startActivity(intent);
     }
 
+    public void onFormularioVisita() {
+
+        Intent intent = new Intent(context, VisitaPacienteActivity.class);
+        context.startActivity(intent);
+    }
 
     public String informacionPaciente() {
         String a = "";
@@ -38,15 +44,39 @@ public class MenuPrincipalViewModel extends BaseObservable {
         SQLiteDatabase db = conn.getReadableDatabase();
         Cursor cursor = db.rawQuery(" SELECT*FROM pacientes ", null);
 
+
         if (!cursor.moveToLast())
             return a;
         else {
             cursor.moveToLast();
+            //cursor2.moveToLast();
             a += "DNI: " + cursor.getString(0) + "\n";
             a += "NOMBRE: " + cursor.getString(1) + "\n";
             a += "EMAIL: " + cursor.getString(2) + "\n";
+           // return a;
+            //Cursor cursor2 = db.rawQuery(" SELECT*FROM visitaMedica WHERE PacDni = ?", new String[]{cursor.getString(0)});
+            //Cursor cursor2 = db.rawQuery(" SELECT*FROM visitaMedica ", null);
+            //cursor2.moveToLast();
+            //a += "PESO: " + cursor2.getInt(2) + "\n";
+            //a += "TEMPERATURA: " + cursor2.getInt(3) + "\n";
+            //a += "SATURACION: " + cursor2.getInt(4) + "\n";
+            //a += "PRESION: " + cursor2.getInt(5) + "\n";
 
+            //return a;
+        }
+
+        Cursor cursor2 = db.rawQuery(" SELECT*FROM visitaMedica WHERE PacDni = ?", new String[]{cursor.getString(0)});
+
+        if(!cursor2.moveToLast())
+            return a;
+        else {
+            cursor2.moveToLast();
+            a += "PESO: " + cursor2.getInt(2) + "\n";
+            a += "TEMPERATURA: " + cursor2.getInt(3) + "\n";
+            a += "SATURACION: " + cursor2.getInt(4) + "\n";
+            a += "PRESION: " + cursor2.getInt(5) + "\n";
             return a;
         }
+
     }
 }
