@@ -27,15 +27,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonVisita"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="144dp"
-            android:text="Button"
+            android:layout_marginTop="40dp"
+            android:onClick="@{()->viewModelMenuPrincipal.onFormularioVisita()}"
+            android:text="VISITA"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonFormulario" />
+
 
         <TextView
             android:id="@+id/textView"
@@ -45,7 +47,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/buttonVisita"
             app:layout_constraintVertical_bias="0.295" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
