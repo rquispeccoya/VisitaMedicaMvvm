@@ -12,37 +12,43 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/fondo"
         tools:context=".MenuPrincipalActivity">
 
         <Button
             android:id="@+id/buttonFormulario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="253dp"
+            android:layout_height="64dp"
             android:layout_marginTop="112dp"
-            android:text="FORMULARIO"
+            android:background="@drawable/registerbackground"
             android:onClick="@{()->viewModelMenuPrincipal.onFormularioPaciente()}"
+            android:text="REGISTRO"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <Button
             android:id="@+id/buttonVisita"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_width="253dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="56dp"
+            android:background="@drawable/registerbackground"
             android:onClick="@{()->viewModelMenuPrincipal.onFormularioVisita()}"
             android:text="VISITA"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintHorizontal_bias="0.515"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonFormulario" />
 
-
         <TextView
             android:id="@+id/textView"
-            android:layout_width="266dp"
-            android:layout_height="255dp"
+            android:layout_width="272dp"
+            android:layout_height="297dp"
+            android:textColor="@color/black"
+            android:background="@drawable/backgrountext"
+            android:padding="18dp"
             android:text="@{viewModelMenuPrincipal.informacionPaciente()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
