@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">VisitaMedicaMvvm</string>
+    <string name="dniPaciente">DNI</string>
+    <string name="nombresPaciente">Nombres</string>
+    <string name="apellidosPaciente">Apellidos</string>
+    <string name="direccionPaciente">Direccion</string>
+    <string name="pesoPaciente">Peso</string>
+    <string name="temperaturaPaciente">Temperatura</string>
+    <string name="presionPaciente">Presion</string>
+    <string name="nivelSaturacion">Saturacion</string>
+    <string name="btnRegistrarPaciente">Registrar Paciente</string>
+    <string name="btnVisitaPaciente">Visita Paciente</string>
+    <string name="btnRegistrar">Registrar</string>
+    <string name="btnEnviarCorreoPaciente">Enviar Correo</string>
+    <string name="correo">Correo</string>
+    <string name="codigovisita">ID</string>
 </resources>
